@@ -32,7 +32,7 @@ $DebugPreference = "continue"
 #  Constants
 
 $CHECK_WINDOW = 120  # We check the most recent X seconds of log.         Default: 120
-$CHECK_COUNT  = 5    # Ban after this many failures in search period.     Default: 5
+$CHECK_COUNT  = 2    # Ban after this many failures in search period.     Default: 5
 $MAX_BANDURATION = 7776000 # 3 Months in seconds
 	
 ################################################################################
@@ -50,7 +50,7 @@ $BannedIPLog	 = $wail2banInstall+"bannedIPLog.ini"
 $RecordEventLog     = "Application"     # Where we store our own event messages
 $FirewallRulePrefix = "wail2ban block:" # What we name our Rules
 
-$EventTypes = "Application,Security,System"	  #Event logs we allow to be processed
+$EventTypes = "Application,Security,System,Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational"	  #Event logs we allow to be processed
 
 New-Variable -Name RegexIP -Force -Value ([regex]'(?<First>2[0-4]\d|25[0-5]|[01]?\d\d?)\.(?<Second>2[0-4]\d|25[0-5]|[01]?\d\d?)\.(?<Third>2[0-4]\d|25[0-5]|[01]?\d\d?)\.(?<Fourth>2[0-4]\d|25[0-5]|[01]?\d\d?)')
 
